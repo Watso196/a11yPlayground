@@ -69,6 +69,7 @@ const AccessibilityRolesScreen = () => {
             style={styles.button}>
             <Button
               title={role}
+              color="#0000FF"
               onPress={() => console.log(`${role} pressed`)}
             />
           </View>
@@ -95,6 +96,7 @@ const AccessibilityRolesScreen = () => {
             <Text style={styles.text}>{role}</Text>
           </View>
         ))}
+      <View id="bottomPaddingView" style={{height: 50}} />
     </ScrollView>
   );
 };
@@ -109,8 +111,9 @@ const styles = StyleSheet.create({
   button: {
     padding: 15,
     marginVertical: 8,
-    backgroundColor: '#007bff',
+    borderColor: '#000',
     borderRadius: 8,
+    borderWidth: 1,
   },
   text: {
     padding: 15,
