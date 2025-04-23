@@ -6,35 +6,39 @@ import {
   View,
   StyleSheet,
   AccessibilityRole,
+  Pressable,
 } from 'react-native';
 
 const roles = [
-  'none',
-  'button',
-  'link',
-  'search',
-  'image',
-  'keyboardkey',
-  'text',
   'adjustable',
-  'imagebutton',
-  'header',
-  'summary',
   'alert',
+  'button',
   'checkbox',
   'combobox',
+  'grid',
+  'header',
+  'image',
+  'imagebutton',
+  'keyboardkey',
+  'link',
+  'list',
   'menu',
   'menubar',
   'menuitem',
+  'none',
   'progressbar',
   'radio',
   'radiogroup',
   'scrollbar',
+  'search',
   'spinbutton',
+  'summary',
   'switch',
   'tab',
   'tablist',
+  'text',
   'timer',
+  'togglebutton',
   'toolbar',
 ];
 
@@ -63,16 +67,15 @@ const AccessibilityRolesScreen = () => {
       />
       {interactiveExpanded &&
         roles.map(role => (
-          <View
+          <Pressable
             key={role}
+            onPress={() => {}} //empty press interaction to make sure AAPI picks this up as interactive
+            accessible
+            accessibilityLabel={role}
             accessibilityRole={role as AccessibilityRole}
             style={styles.button}>
-            <Button
-              title={role}
-              color="#0000FF"
-              onPress={() => console.log(`${role} pressed`)}
-            />
-          </View>
+            <Text>{role}</Text>
+          </Pressable>
         ))}
       <Text style={styles.sectionTitle}>Non-Interactive Views with Roles</Text>
       <Button
