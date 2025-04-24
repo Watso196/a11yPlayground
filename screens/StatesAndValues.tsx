@@ -21,6 +21,7 @@ const states: (keyof AccessibilityState)[] = [
 const StatesAndValuesScreen = () => {
   const [statesExpanded, setStatesExpanded] = useState(false);
   const [valuesExpanded, setValuesExpanded] = useState(false);
+  const [textValue, setTextValue] = useState<string | undefined>(undefined);
 
   const [activeStates, setActiveStates] = useState<Partial<AccessibilityState>>(
     {},
@@ -41,7 +42,7 @@ const StatesAndValuesScreen = () => {
       </Text>
 
       <Text style={styles.sectionTitle}>
-        Interactive Buttons with Accessibility States
+        Pressables with Accessibility States
       </Text>
       <Button
         onPress={() => setStatesExpanded(!statesExpanded)}
@@ -56,7 +57,9 @@ const StatesAndValuesScreen = () => {
               onPress={() => {
                 toggleState(state);
               }}
-              accessibilityLabel={`Pressable with state ${state}`}
+              accessibilityLabel={`${state} = ${
+                activeStates[state] ? 'true' : 'false'
+              }`}
               accessibilityState={{[state]: activeStates[state]}}
               style={styles.button}>
               <Text>{`${state} = ${
@@ -67,7 +70,7 @@ const StatesAndValuesScreen = () => {
         ))}
 
       <Text style={styles.sectionTitle}>
-        Placeholder for Accessibility Values
+        Pressables with Accessibility Values
       </Text>
       <Button
         onPress={() => setValuesExpanded(!valuesExpanded)}
@@ -77,6 +80,16 @@ const StatesAndValuesScreen = () => {
       {valuesExpanded && (
         <View>
           <AccessibleSlider />
+          <Pressable
+            accessible
+            accessibilityLabel={`text = ${textValue ?? 'undefined'}`}
+            accessibilityValue={{text: textValue}}
+            style={styles.button}
+            onPress={() => {
+              setTextValue(textValue === undefined ? 'Text value' : undefined);
+            }}>
+            <Text>{`text = ${textValue ?? 'undefined'}`}</Text>
+          </Pressable>
         </View>
       )}
 
