@@ -1,0 +1,6 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -workspace a11yPlayground.xcworkspace -scheme a11yPlayground -configuration Debug -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 15" clean build
+
+Build settings from command line:
+    SDKROOT = iphonesimulator18.4
+

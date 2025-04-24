@@ -5,6 +5,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import AccessibilityRoles from './screens/AccessibilityRoles';
 import CommonComponentsScreen from './screens/CommonComponents';
+import StatesAndValuesScreen from './screens/StatesAndValues';
 
 // Static page content as its own screen component
 function WelcomeScreen() {
@@ -51,6 +52,10 @@ function App(): React.JSX.Element {
           <Drawer.Screen
             name="Common Components"
             component={CommonComponentsScreen}
+          />
+          <Drawer.Screen
+            name="Accessibility States and Values"
+            component={StatesAndValuesScreen}
           />
         </Drawer.Navigator>
       </NavigationContainer>

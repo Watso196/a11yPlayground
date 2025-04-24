@@ -42,8 +42,6 @@ const roles = [
   'toolbar',
 ];
 
-// Removed from the top level and moved inside the component
-
 const AccessibilityRolesScreen = () => {
   const [interactiveExpanded, setInteractiveExpanded] = useState(false);
   const [nonInteractiveExpanded, setNonInteractiveExpanded] = useState(false);

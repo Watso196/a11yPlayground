@@ -79,6 +79,7 @@ const CommonComponentsScreen = () => {
       {/* LISTS */}
       <Text style={styles.sectionTitle}>Lists</Text>
       <Text style={styles.text}>A FlatList, which is a non-dynamic list.</Text>
+      {/* Need to figure out how to have a FlatList example that isn't inside of a scrollable region - RN does not like this, throwing errors */}
       <FlatList
         data={listData}
         renderItem={({item}) => (
