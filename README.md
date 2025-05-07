@@ -1,97 +1,130 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# a11yPlayground
 
-# Getting Started
+**a11yPlayground** is a React Native mobile application built for internal use by accessibility engineers, designers, and developers. The app provides a controlled environment for testing accessibility behaviors, exploring assistive technologies, and designing accessible UI patterns.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+> ⚠️ **Note:** We recommend running this app on **physical devices** (not just simulators) when testing with screen readers and other assistive technologies, as behavior can differ from simulated devices significantly.
 
-## Step 1: Start Metro
+---
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## 🚀 Quick Start
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+### Clone the Repository
 
-```sh
-# Using npm
-npm start
-
-# OR using Yarn
-yarn start
+```
+git clone https://github.com/YOURORG/a11yPlayground.git
+cd a11yPlayground
 ```
 
-## Step 2: Build and run your app
+### Set Up Volta, Node, and Yarn
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+```
+curl https://get.volta.sh | bash
+volta install node@18
+volta install yarn
+volta pin node@18
+volta pin yarn
+yarn install
+```
+
+Run `node -v` in the root directory to confirm your version is pinned to `v18`.
+
+## 🛠️ Platform Setup
+
+### iOS Requirements
+
+- macOS with Xcode installed (and updated to latest version of Xcode and MacOS)
+- CocoaPods: `brew install cocoapods`
+- Xcode CLI tools: `xcode-select --install`
+
+### Android Requirements
+
+- Android Studio (Custom installation mode)
+- OpenJDK 17:
+
+```
+brew install openjdk@17
+sudo ln -sfn /opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-17.jdk
+```
+
+- Add to your shell config (.zshrc or .bashrc):
+
+```
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+```
+
+- Reload your shell:
+
+```
+source ~/.zshrc  # or source ~/.bashrc
+```
+
+- Verify with:
+
+```
+adb --version
+```
+
+## 📱 Running the App
 
 ### Android
 
-```sh
-# Using npm
-npm run android
-
-# OR using Yarn
+```
 yarn android
 ```
 
+To build to a physical device:
+
+1. Enable Developer Mode and USB Debugging on your Android device.
+
+2. Connect the device via USB.
+
+3. Run `yarn android`.
+
 ### iOS
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
 ```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
-```
-
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
 yarn ios
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+To build to a physical device:
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+1. Disconnect from any VPN.
 
-## Step 3: Modify your app
+2. Open `ios/a11yPlayground.xcworkspace` in Xcode.
 
-Now that you have successfully run the app, let's make changes!
+3. Configure Signing & Capabilities:
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+   - Select "Automatically manage signing"
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+   - Choose your personal team - likely your name followed by "(Personal Team)"
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+4. Connect your iOS device to your device via cable. (You may need to go to Xcode and select your device from the Devices and Simulators menu to get it to install packages.)
 
-## Congratulations! :tada:
+5. Approve Developer Mode on your device when prompted. If you are not prompted, go to Settings >
 
-You've successfully run and modified your React Native App. :partying_face:
+6. Run `yarn ios`.
 
-### Now what?
+> If your device shows a trust error, go to Settings > General > VPN & Device Management and trust the developer certificate for the app.
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+## 🧰 Troubleshooting
 
-# Troubleshooting
+- **iOS Build Error 70?**
+  Ensure you're not on VPN and that your device is trusted in Xcode.
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+- **Android exit code 1 during build?**
+  Try updating your .zshrc Java setup:
 
-# Learn More
+```
+export JAVA_HOME=$(/usr/libexec/java_home -v 17)
+export PATH=$JAVA_HOME/bin:$PATH
+```
 
-To learn more about React Native, take a look at the following resources:
+## 🙌 Contributing
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+If you'd like to contribute new accessible patterns or help improve the playground, feel free to open a pull request or submit an issue!
+
+## 📄 License
+
+MIT
