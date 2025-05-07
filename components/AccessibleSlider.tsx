@@ -1,6 +1,7 @@
 import React, {useState, useCallback} from 'react';
-import {Text, StyleSheet, Pressable} from 'react-native';
+import {Text, Pressable} from 'react-native';
 import {ExternalKeyboardView} from 'react-native-external-keyboard';
+import styles from '../styles/commonStyles';
 
 const CustomSlider = ({step = 10}: {step?: number}) => {
   const [value, setValue] = useState(50); // Starting value
@@ -59,28 +60,5 @@ const CustomSlider = ({step = 10}: {step?: number}) => {
     </ExternalKeyboardView>
   );
 };
-
-const styles = StyleSheet.create({
-  sliderWrapper: {
-    marginVertical: 20,
-  },
-  slider: {
-    borderWidth: 1,
-    borderColor: '#000',
-    borderRadius: 8,
-    padding: 20,
-    backgroundColor: '#e0f7fa',
-    alignItems: 'center',
-  },
-  sliderText: {
-    fontSize: 18,
-    alignItems: 'center',
-  },
-  sliderHint: {
-    fontSize: 12,
-    marginTop: 5,
-    color: '#666',
-  },
-});
 
 export default CustomSlider;

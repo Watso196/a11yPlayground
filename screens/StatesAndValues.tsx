@@ -4,11 +4,11 @@ import {
   Text,
   Button,
   View,
-  StyleSheet,
   Pressable,
   AccessibilityState,
 } from 'react-native';
 import AccessibleSlider from '../components/AccessibleSlider';
+import styles from '../styles/commonStyles';
 
 const states: (keyof AccessibilityState)[] = [
   'busy',
@@ -97,29 +97,5 @@ const StatesAndValuesScreen = () => {
     </ScrollView>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-    paddingBottom: 100,
-    backgroundColor: '#f0f0f0',
-  },
-  button: {
-    padding: 15,
-    marginVertical: 8,
-    borderColor: '#000',
-    borderRadius: 8,
-    borderWidth: 1,
-    backgroundColor: '#fff',
-  },
-  text: {
-    padding: 15,
-  },
-  sectionTitle: {
-    fontSize: 20,
-    padding: 15,
-  },
-});
 
 export default StatesAndValuesScreen;

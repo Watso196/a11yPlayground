@@ -5,12 +5,12 @@ import {
   Pressable,
   AccessibilityInfo,
   findNodeHandle,
-  StyleSheet,
 } from 'react-native';
 import {
   DrawerContentComponentProps,
   useDrawerStatus,
 } from '@react-navigation/drawer';
+import styles from './styles/commonStyles';
 
 export default function CustomDrawerContent({
   navigation,
@@ -45,15 +45,23 @@ export default function CustomDrawerContent({
 
       <Pressable
         ref={firstItemRef}
-        style={styles.item}
+        style={{marginBottom: 20}}
         accessible
         accessibilityRole="button"
-        onPress={() => navigation.navigate('Welcome')}>
-        <Text>Welcome</Text>
+        onPress={() => navigation.navigate('Home')}>
+        <Text>Home</Text>
       </Pressable>
 
       <Pressable
-        style={styles.item}
+        style={{marginBottom: 20}}
+        accessible
+        accessibilityRole="button"
+        onPress={() => navigation.navigate('Accessibility Actions')}>
+        <Text>Accessibility Actions</Text>
+      </Pressable>
+
+      <Pressable
+        style={{marginBottom: 20}}
         accessible
         accessibilityRole="button"
         onPress={() => navigation.navigate('Accessibility Roles')}>
@@ -61,7 +69,7 @@ export default function CustomDrawerContent({
       </Pressable>
 
       <Pressable
-        style={styles.item}
+        style={{marginBottom: 20}}
         accessible
         accessibilityRole="button"
         onPress={() => navigation.navigate('Common Components')}>
@@ -69,43 +77,51 @@ export default function CustomDrawerContent({
       </Pressable>
 
       <Pressable
-        style={styles.item}
+        style={{marginBottom: 20}}
         accessible
         accessibilityRole="button"
-        onPress={() => navigation.navigate('Accessibility States and Values')}>
-        <Text>States and Values</Text>
+        onPress={() => navigation.navigate('Custom Component Patterns')}>
+        <Text>Custom Component Patterns</Text>
       </Pressable>
 
       <Pressable
-        style={styles.item}
+        style={{marginBottom: 20}}
         accessibilityRole="button"
         onPress={() => navigation.navigate('Custom Gestures')}>
         <Text>Custom Gestures</Text>
       </Pressable>
+
+      <Pressable
+        style={{marginBottom: 20}}
+        accessible
+        accessibilityRole="button"
+        onPress={() => navigation.navigate('Dynamic Content Announcements')}>
+        <Text>Dynamic Content Announcements</Text>
+      </Pressable>
+
+      <Pressable
+        style={{marginBottom: 20}}
+        accessible
+        accessibilityRole="button"
+        onPress={() => navigation.navigate('Focus Control')}>
+        <Text>Focus Control</Text>
+      </Pressable>
+
+      <Pressable
+        style={{marginBottom: 20}}
+        accessible
+        accessibilityRole="button"
+        onPress={() => navigation.navigate('Motion Reduction')}>
+        <Text>Motion Reduction</Text>
+      </Pressable>
+
+      <Pressable
+        style={{marginBottom: 20}}
+        accessible
+        accessibilityRole="button"
+        onPress={() => navigation.navigate('States and Values')}>
+        <Text>States and Values</Text>
+      </Pressable>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  drawerContainer: {
-    flex: 1,
-    paddingTop: 40,
-    paddingLeft: 20,
-    backgroundColor: 'white',
-  },
-  closeButton: {
-    marginBottom: 30,
-    backgroundColor: '#eee',
-    paddingVertical: 10,
-    paddingHorizontal: 15,
-    borderRadius: 5,
-    alignSelf: 'flex-start',
-  },
-  closeButtonText: {
-    fontWeight: '600',
-    color: '#333',
-  },
-  item: {
-    marginBottom: 20,
-  },
-});

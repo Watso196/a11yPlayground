@@ -1,11 +1,17 @@
 import React from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import AccessibilityRoles from './screens/AccessibilityRoles';
+import AccessibilityRolesScreen from './screens/AccessibilityRoles';
 import CommonComponentsScreen from './screens/CommonComponents';
 import StatesAndValuesScreen from './screens/StatesAndValues';
 import CustomGesturesScreen from './screens/CustomGestures';
 import CustomDrawerContent from './CustomDrawerContent';
-import {ScrollView, Text, StyleSheet} from 'react-native';
+import CustomComponentsScreen from './screens/CustomComponents';
+import DynamicContentAnnouncementsScreen from './screens/DynamicContentAnnouncements';
+import AccessibilityActionsScreen from './screens/AccessibilityActions';
+import FocusControlScreen from './screens/FocusControl';
+import MotionReductionScreen from './screens/MotionReduction';
+import {ScrollView, Text} from 'react-native';
+import styles from './styles/commonStyles';
 
 const Drawer = createDrawerNavigator();
 
@@ -28,41 +34,58 @@ function WelcomeScreen() {
   );
 }
 
+const DrawerContent = (props: any) => <CustomDrawerContent {...props} />;
+
 export default function DrawerNavigator() {
   return (
     <Drawer.Navigator
-      initialRouteName="Welcome"
+      initialRouteName="Home"
       screenOptions={{
         drawerType: 'front',
         overlayColor: 'blue',
         drawerPosition: 'left',
       }}
-      drawerContent={props => <CustomDrawerContent {...props} />}>
-      <Drawer.Screen name="Welcome" component={WelcomeScreen} />
+      drawerContent={DrawerContent}>
+      <Drawer.Screen name="Home" component={WelcomeScreen} />
+
+      <Drawer.Screen
+        name="Accessibility Actions"
+        component={AccessibilityActionsScreen}
+      />
+
       <Drawer.Screen
         name="Accessibility Roles"
-        component={AccessibilityRoles}
+        component={AccessibilityRolesScreen}
       />
+
       <Drawer.Screen
         name="Common Components"
         component={CommonComponentsScreen}
       />
+
       <Drawer.Screen
-        name="Accessibility States and Values"
+        name="Custom Component Patterns"
+        component={CustomComponentsScreen}
+      />
+
+      <Drawer.Screen name="Custom Gestures" component={CustomGesturesScreen} />
+
+      <Drawer.Screen
+        name="Dynamic Content Announcements"
+        component={DynamicContentAnnouncementsScreen}
+      />
+
+      <Drawer.Screen name="Focus Control" component={FocusControlScreen} />
+
+      <Drawer.Screen
+        name="Motion Reduction"
+        component={MotionReductionScreen}
+      />
+
+      <Drawer.Screen
+        name="States and Values"
         component={StatesAndValuesScreen}
       />
-      <Drawer.Screen name="Custom Gestures" component={CustomGesturesScreen} />
     </Drawer.Navigator>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-    backgroundColor: '#f0f0f0',
-  },
-  text: {
-    padding: 15,
-  },
-});

@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "react-native run-android --port 4001",
+    "android": "bash -c 'source set-java.sh && npx react-native run-android --port 4001'",
     "ios": "react-native run-ios --port 4001",
     "lint": "eslint .",
     "start": "react-native start --port 4001",
@@ -42,5 +42,8 @@
   },
   "engines": {
     "node": ">=18"
+  },
+  "volta": {
+    "node": "18.20.8"
   }
 }
