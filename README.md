@@ -1,6 +1,6 @@
 # a11yPlayground
 
-**a11yPlayground** is a React Native mobile application built for internal use by accessibility engineers, designers, and developers. The app provides a controlled environment for testing accessibility behaviors, exploring assistive technologies, and designing accessible UI patterns.
+**a11yPlayground** is a React Native mobile application built for use by accessibility engineers, designers, and developers. The app provides a controlled environment for testing accessibility behaviors, exploring assistive technologies, and designing accessible UI patterns in React Native.
 
 > ⚠️ **Note:** We recommend running this app on **physical devices** (not just simulators) when testing with screen readers and other assistive technologies, as behavior can differ from simulated devices significantly.
 
