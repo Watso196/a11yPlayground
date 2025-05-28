@@ -36,6 +36,16 @@ Run `node -v` in the root directory to confirm your version is pinned to `v18`.
 - CocoaPods: `brew install cocoapods`
 - Xcode CLI tools: `xcode-select --install`
 
+#### iOS Signing
+
+The iOS project uses `local.xcconfig` to generate a unique bundle ID per developer.  
+This prevents conflicts when building and running locally.
+
+Bundle IDs are formatted as:
+`org.reactjs.native.example.a11yPlayground.[your-username]`
+
+You will need to set the config files for your Debug and Release Configurations to point to the ios/config/local.xcconfig file under Xcode > Info > Configurations.
+
 ### Android Requirements
 
 - Android Studio (Custom installation mode)

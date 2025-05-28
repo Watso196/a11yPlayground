@@ -1,0 +1,3 @@
+#include? "base.xcconfig"
+
+PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.a11yPlayground.$(USER)
