@@ -4,6 +4,7 @@
 
 # Xcode
 #
+ios/a11yPlayground.xcodeproj/project.pbxproj
 build/
 *.pbxuser
 !default.pbxuser
