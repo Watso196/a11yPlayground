@@ -10,6 +10,7 @@ import DynamicContentAnnouncementsScreen from './screens/DynamicContentAnnouncem
 import AccessibilityActionsScreen from './screens/AccessibilityActions';
 import FocusControlScreen from './screens/FocusControl';
 import MotionReductionScreen from './screens/MotionReduction';
+import NestedAdjacentDemoScreen from './screens/NestedAdjacentDemo';
 import {ScrollView, Text} from 'react-native';
 import styles from './styles/commonStyles';
 
@@ -80,6 +81,11 @@ export default function DrawerNavigator() {
       <Drawer.Screen
         name="Motion Reduction"
         component={MotionReductionScreen}
+      />
+
+      <Drawer.Screen
+        name="Nested and Adjacent Elements Demo"
+        component={NestedAdjacentDemoScreen}
       />
 
       <Drawer.Screen

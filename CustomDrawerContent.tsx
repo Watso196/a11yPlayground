@@ -119,6 +119,16 @@ export default function CustomDrawerContent({
         style={{marginBottom: 20}}
         accessible
         accessibilityRole="button"
+        onPress={() =>
+          navigation.navigate('Nested and Adjacent Elements Demo')
+        }>
+        <Text>Nested and Adjacent Elements Demo</Text>
+      </Pressable>
+
+      <Pressable
+        style={{marginBottom: 20}}
+        accessible
+        accessibilityRole="button"
         onPress={() => navigation.navigate('States and Values')}>
         <Text>States and Values</Text>
       </Pressable>
