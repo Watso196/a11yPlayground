@@ -10,7 +10,6 @@ import DynamicContentAnnouncementsScreen from './screens/DynamicContentAnnouncem
 import AccessibilityActionsScreen from './screens/AccessibilityActions';
 import FocusControlScreen from './screens/FocusControl';
 import MotionReductionScreen from './screens/MotionReduction';
-import SophiaExperimentsScreen from './screens/SophiaExperiments';
 import NestedAdjacentDemoScreen from './screens/NestedAdjacentDemo';
 import {ScrollView, Text} from 'react-native';
 import styles from './styles/commonStyles';
@@ -21,7 +20,7 @@ function WelcomeScreen() {
   return (
     <ScrollView style={styles.container}>
       <Text style={styles.text}>
-        Welcome to the Accessibility Playground Testing App sophia!
+        Welcome to the Accessibility Playground Testing App!
       </Text>
       <Text style={styles.text}>
         This is where we can learn React Native, and test React Native code on
