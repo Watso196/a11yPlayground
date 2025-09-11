@@ -10,6 +10,8 @@ import DynamicContentAnnouncementsScreen from './screens/DynamicContentAnnouncem
 import AccessibilityActionsScreen from './screens/AccessibilityActions';
 import FocusControlScreen from './screens/FocusControl';
 import MotionReductionScreen from './screens/MotionReduction';
+import SophiaExperimentsScreen from './screens/SophiaExperiments';
+import NestedAdjacentDemoScreen from './screens/NestedAdjacentDemo';
 import {ScrollView, Text} from 'react-native';
 import styles from './styles/commonStyles';
 
@@ -19,7 +21,7 @@ function WelcomeScreen() {
   return (
     <ScrollView style={styles.container}>
       <Text style={styles.text}>
-        Welcome to the Accessibility Playground Testing App!
+        Welcome to the Accessibility Playground Testing App sophia!
       </Text>
       <Text style={styles.text}>
         This is where we can learn React Native, and test React Native code on
@@ -80,6 +82,11 @@ export default function DrawerNavigator() {
       <Drawer.Screen
         name="Motion Reduction"
         component={MotionReductionScreen}
+      />
+
+      <Drawer.Screen
+        name="Nested and Adjacent Elements Demo"
+        component={NestedAdjacentDemoScreen}
       />
 
       <Drawer.Screen

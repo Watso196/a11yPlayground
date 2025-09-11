@@ -46,7 +46,7 @@ const commonStyles = StyleSheet.create({
   },
   subtext: {
     fontSize: 12,
-    color: '#888',
+    color: '#514f4fff',
   },
 
   // Button
