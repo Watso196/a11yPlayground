@@ -162,6 +162,30 @@ const commonStyles = StyleSheet.create({
     width: 200,
     height: 200,
   },
+
+  // Nav Bar Demo
+  navBarContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    backgroundColor: '#fff',
+    color: 'white',
+    marginTop: 20,
+    borderRadius: 8,
+    paddingVertical: 10,
+    borderWidth: 1,
+    borderColor: '#000',
+    borderStyle: 'solid',
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    alignContent: 'center',
+  },
+  selectedTab: {
+    borderBottomWidth: 2,
+    borderBottomColor: '#000',
+  },
 });
 
 export default commonStyles;
