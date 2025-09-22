@@ -12,6 +12,7 @@ import FocusControlScreen from './screens/FocusControl';
 import MotionReductionScreen from './screens/MotionReduction';
 import NavigationBarScreen from './screens/NavigationBar';
 import NestedAdjacentDemoScreen from './screens/NestedAdjacentDemo';
+import SwipeOrderDemoScreen from './screens/SwipeOrderDemo';
 import {ScrollView, Text} from 'react-native';
 import styles from './styles/commonStyles';
 
@@ -95,6 +96,8 @@ export default function DrawerNavigator() {
         name="States and Values"
         component={StatesAndValuesScreen}
       />
+
+      <Drawer.Screen name="Swipe Order Demo" component={SwipeOrderDemoScreen} />
     </Drawer.Navigator>
   );
 }

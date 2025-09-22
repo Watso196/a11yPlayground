@@ -14,6 +14,7 @@
     "@react-navigation/native": "^7.1.6",
     "react": "19.0.0",
     "react-native": "0.78.2",
+    "react-native-a11y-order": "^0.5.0",
     "react-native-external-keyboard": "^0.5.4",
     "react-native-gesture-handler": "^2.25.0",
     "react-native-reanimated": "^3.17.3",
