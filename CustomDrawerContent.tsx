@@ -140,6 +140,14 @@ export default function CustomDrawerContent({
         onPress={() => navigation.navigate('States and Values')}>
         <Text>States and Values</Text>
       </Pressable>
+
+      <Pressable
+        style={{marginBottom: 20}}
+        accessible
+        accessibilityRole="button"
+        onPress={() => navigation.navigate('Swipe Order Demo')}>
+        <Text>Swipe Order Demo</Text>
+      </Pressable>
     </View>
   );
 }
