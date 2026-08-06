@@ -35,6 +35,7 @@ Run `node -v` in the root directory to confirm your version is pinned to `v18`.
 - macOS with Xcode installed (and updated to latest version of Xcode and MacOS)
 - CocoaPods: `brew install cocoapods`
 - Xcode CLI tools: `xcode-select --install`
+- `ios-deploy`: `brew install ios-deploy` when running `yarn ios` to a physical device from the command line
 
 #### iOS Signing
 
@@ -98,6 +99,12 @@ To build to a physical device:
 yarn ios
 ```
 
+If you are running on a physical device from the command line, make sure `ios-deploy` is installed first:
+
+```
+brew install ios-deploy
+```
+
 To build to a physical device:
 
 1. Disconnect from any VPN.
@@ -117,6 +124,21 @@ To build to a physical device:
 6. Run `yarn ios`.
 
 > If your device shows a trust error, go to Settings > General > VPN & Device Management and trust the developer certificate for the app.
+
+#### Native iOS Navigation Bar Demo
+
+The app includes a Native iOS navigation bar demo that presents a UIKit-based
+screen with a native UINavigationBar using system blur material.
+
+How to launch it:
+
+1. Open the app drawer.
+2. Go to "Navigation Bar".
+3. Activate "Open Native iOS Navigation Bar Demo".
+
+This is useful when validating base iOS behavior (VoiceOver announcements,
+native back button behavior, and system appearance behavior) separately from
+React Native-rendered navigation components.
 
 ## 🧰 Troubleshooting
 
