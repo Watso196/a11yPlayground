@@ -119,8 +119,8 @@ export default function CustomDrawerContent({
         style={{marginBottom: 20}}
         accessible
         accessibilityRole="button"
-        onPress={() => navigation.navigate('Navigation Bar')}>
-        <Text>Navigation Bar Demo</Text>
+        onPress={() => navigation.navigate('Liquid Glass Tab Bar')}>
+        <Text>Liquid Glass Tab Bar Demo</Text>
       </Pressable>
 
       <Pressable

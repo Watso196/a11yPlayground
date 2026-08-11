@@ -125,25 +125,38 @@ To build to a physical device:
 
 > If your device shows a trust error, go to Settings > General > VPN & Device Management and trust the developer certificate for the app.
 
-#### Native iOS Navigation Bar Demo
+#### Native iOS Tab Bar + Navigation Bar Demo
 
-The app includes a Native iOS navigation bar demo that presents a UIKit-based
-screen with a native UINavigationBar using system blur material.
+The app includes a Native iOS tab bar and navigation bar demo that presents a
+UIKit-based flow with a native UITabBar and UINavigationBar using system blur
+material.
 
 How to launch it:
 
 1. Open the app drawer.
-2. Go to "Navigation Bar".
-3. Activate "Open Native iOS Navigation Bar Demo".
+2. Go to "Liquid Glass Tab Bar".
+3. Activate "Open Native iOS Tab + Nav Bar Demo".
 
 This is useful when validating base iOS behavior (VoiceOver announcements,
-native back button behavior, and system appearance behavior) separately from
-React Native-rendered navigation components.
+native large-title collapse behavior, native back button behavior, and system
+appearance behavior) separately from React Native-rendered navigation
+components.
 
 ## 🧰 Troubleshooting
 
 - **iOS Build Error 70?**
   Ensure you're not on VPN and that your device is trusted in Xcode.
+
+- **iOS build errors after dependency or Podfile changes?**
+  Reinstall pods:
+
+```
+cd ios
+pod install
+```
+
+- **`yarn ios` installs the app but it does not open on your iPhone?**
+  Your developer certificate or provisioning profile may not be trusted on the device yet. On your iPhone, go to Settings > General > VPN & Device Management, trust the developer profile for the app, then try opening the app manually once or rerun `yarn ios`.
 
 - **Android exit code 1 during build?**
   Try updating your .zshrc Java setup:
@@ -156,6 +169,10 @@ export PATH=$JAVA_HOME/bin:$PATH
 ## 🙌 Contributing
 
 If you'd like to contribute new accessible patterns or help improve the playground, feel free to open a pull request or submit an issue!
+
+## 📘 Architecture Notes
+
+- Liquid glass native/RN hybrid plan: [docs/liquid-glass-navigation-architecture.md](docs/liquid-glass-navigation-architecture.md)
 
 ## 📄 License
 
