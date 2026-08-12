@@ -164,27 +164,79 @@ const commonStyles = StyleSheet.create({
   },
 
   // Nav Bar Demo
-  navBarContainer: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    backgroundColor: '#fff',
-    color: 'white',
-    marginTop: 20,
-    borderRadius: 8,
-    paddingVertical: 10,
-    borderWidth: 1,
-    borderColor: '#000',
-    borderStyle: 'solid',
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
-    alignContent: 'center',
+  navDemoScrollContent: {
+    paddingBottom: 24,
   },
-  selectedTab: {
-    borderBottomWidth: 2,
-    borderBottomColor: '#000',
+  testingInstructionsPanel: {
+    marginHorizontal: 15,
+    marginBottom: 12,
+    padding: 12,
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: '#333',
+    backgroundColor: '#fff',
+  },
+  iosOnlyWarningBanner: {
+    marginHorizontal: 15,
+    marginBottom: 12,
+    padding: 12,
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: '#8a6d00',
+    backgroundColor: '#fff4cc',
+  },
+  iosOnlyWarningText: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: '#5c4600',
+    textAlign: 'center',
+  },
+  scrollTestCard: {
+    marginHorizontal: 15,
+    marginBottom: 10,
+    padding: 12,
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: '#b7b7b7',
+    backgroundColor: '#ffffff',
+  },
+  scrollTestTitle: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#222',
+    marginBottom: 6,
+  },
+  scrollTestMeta: {
+    fontSize: 14,
+    color: '#444',
+  },
+  glassTransparencyTestBlock: {
+    flexDirection: 'row',
+    height: 500,
+    borderRadius: 12,
+    overflow: 'hidden',
+    marginHorizontal: 15,
+    marginBottom: 24,
+  },
+  glassTransparencyStripeRed: {
+    flex: 1,
+    backgroundColor: '#e2263d',
+  },
+  glassTransparencyStripeOrange: {
+    flex: 1,
+    backgroundColor: '#ff9500',
+  },
+  glassTransparencyStripeBlue: {
+    flex: 1,
+    backgroundColor: '#0a84ff',
+  },
+  glassTransparencyStripeMagenta: {
+    flex: 1,
+    backgroundColor: '#bf5af2',
+  },
+  glassTransparencyStripeTeal: {
+    flex: 1,
+    backgroundColor: '#00c7be',
   },
 });
 
