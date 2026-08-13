@@ -7,7 +7,8 @@
     "ios": "react-native run-ios --port 4001",
     "lint": "eslint .",
     "start": "react-native start --port 4001",
-    "test": "jest"
+    "test": "jest",
+    "generate:snacks": "node scripts/generate-snacks.js"
   },
   "dependencies": {
     "@react-navigation/drawer": "^7.3.9",
@@ -39,6 +40,7 @@
     "jest": "^29.6.3",
     "prettier": "2.8.8",
     "react-test-renderer": "19.0.0",
+    "snack-sdk": "^6.6.2",
     "typescript": "5.0.4"
   },
   "engines": {
